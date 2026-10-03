@@ -21,7 +21,6 @@ from preprocessing import ROOT, FEATURES, TARGET, plt, save_figure, sns
 
 
 def make_pipeline(model, categories):
-    # Pipeline обучает преобразования заново внутри каждого фолда CV.
     transform = ColumnTransformer([
         ("numeric", StandardScaler(), FEATURES),
         ("categorical", OneHotEncoder(handle_unknown="ignore", sparse_output=False), categories),
@@ -33,7 +32,6 @@ def main():
     sns.set_theme(style="whitegrid")
     output = ROOT / "reports/lab1"
     output.mkdir(parents=True, exist_ok=True)
-    # Используем исходные единицы, а не CSV, масштабированный на всей таблице.
     data = pd.read_csv(ROOT / "data/raw/credit_risk_dataset.csv").dropna().drop_duplicates()
     x, y = data.drop(columns=TARGET), data[TARGET]
     categories = [column for column in x.columns if column not in FEATURES]
@@ -65,7 +63,6 @@ def main():
         search.fit(x_train, y_train)
         best = search.best_estimator_
         predicted = best.predict(x_test)
-        # SVM даёт расстояние до разделяющей границы; ROC-AUC не требует вероятностей.
         score = (best.decision_function(x_test) if name == "SVM"
                  else best.predict_proba(x_test)[:, 1])
         metrics.append({
@@ -107,7 +104,6 @@ def main():
     result = pd.DataFrame(metrics)
     result.to_csv(output / "metrics.csv", index=False)
     predictions.to_csv(output / "predictions.csv", index=False)
-    # Победителя определяем по CV на тренировочной выборке, не по тесту.
     winner = result.loc[result.cv_f1.idxmax(), "model"]
     details["experiment"] = {
         "python": platform.python_version(), "sklearn": sklearn.__version__,

@@ -66,15 +66,11 @@ def main() -> None:
     output.mkdir(parents=True, exist_ok=True)
     visualize(raw, figures / "raw")
 
-    # dropna удаляет строки с хотя бы одним пропуском.
     complete = raw.dropna().copy()
-    # drop_duplicates оставляет одну копию каждой одинаковой строки.
     clean = complete.drop_duplicates().copy()
     clean.to_csv(output / "credit_risk_clean.csv", index=False)
     visualize(clean, figures / "clean")
 
-    # Min-max нормализация: (x - min) / (max - min).
-    # Категории и целевой столбец не масштабируем.
     minimum = clean[FEATURES].min()
     maximum = clean[FEATURES].max()
     span = (maximum - minimum).replace(0, 1)
@@ -82,7 +78,6 @@ def main() -> None:
     normalized[FEATURES] = (clean[FEATURES] - minimum) / span
     normalized.to_csv(output / "credit_risk_normalized.csv", index=False)
 
-    # Pearson: линейная связь числовых признаков; категории исключены.
     correlation = clean[FEATURES + [TARGET]].corr(method="pearson")
     correlation.to_csv(output / "correlation.csv")
     plt.figure(figsize=(11, 9))
