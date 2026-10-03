@@ -1,0 +1,9 @@
+cluster,method,0,1
+0,KMeans,827,179
+1,KMeans,2290,704
+-1,DBSCAN,10,8
+0,DBSCAN,3103,875
+1,DBSCAN,4,0
+0,Hierarchical,3101,869
+1,Hierarchical,1,0
+2,Hierarchical,15,14

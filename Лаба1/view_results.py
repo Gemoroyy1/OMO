@@ -29,14 +29,14 @@ def main():
             images.append((f"{title} {label}", f"figures/{state}/{filename}.png"))
     required = [ROOT / "reports" / path for _, path in images]
     required += [ROOT / "reports/lab1/metrics.csv", ROOT / "reports/lab1/results.json",
-                 ROOT / "data/processed/preprocessing_report.json"]
+                 ROOT.parent / "data/processed/preprocessing_report.json"]
     if args.rebuild or not all(path.exists() for path in required):
         for script in ["preprocessing.py", "classification.py"]:
             subprocess.run([sys.executable, str(ROOT / script)], check=True)
     with (ROOT / "reports/lab1/metrics.csv").open(encoding="utf-8", newline="") as stream:
         rows = list(csv.DictReader(stream))
     details = json.loads((ROOT / "reports/lab1/results.json").read_text(encoding="utf-8"))
-    clean = json.loads((ROOT / "data/processed/preprocessing_report.json").read_text(encoding="utf-8"))
+    clean = json.loads((ROOT.parent / "data/processed/preprocessing_report.json").read_text(encoding="utf-8"))
     escape = html.escape
     body = "<h1>Лабораторная №1. Классификация</h1>"
     body += (f"<p>Исходных строк: {clean['original_rows']}; удалено с пропусками: "

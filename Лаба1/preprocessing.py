@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+DATA = ROOT.parent / "data"
 os.environ.setdefault("MPLCONFIGDIR", str(ROOT / ".cache/matplotlib"))
 import matplotlib
 
@@ -60,8 +61,8 @@ def visualize(data: pd.DataFrame, directory: Path) -> None:
 
 def main() -> None:
     sns.set_theme(style="whitegrid")
-    raw = pd.read_csv(ROOT / "data/raw/credit_risk_dataset.csv")
-    output = ROOT / "data/processed"
+    raw = pd.read_csv(DATA / "raw/credit_risk_dataset.csv")
+    output = DATA / "processed"
     figures = ROOT / "reports/figures"
     output.mkdir(parents=True, exist_ok=True)
     visualize(raw, figures / "raw")

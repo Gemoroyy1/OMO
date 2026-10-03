@@ -1,0 +1,54 @@
+{
+  "source": "data/raw/credit_risk_dataset.csv",
+  "original_rows": 32581,
+  "removed_missing": 3943,
+  "removed_duplicates": 137,
+  "clean_rows": 28501,
+  "sample_rows": 4000,
+  "random_state": 42,
+  "encoded_features": [
+    "numeric__person_age",
+    "numeric__person_income",
+    "numeric__person_emp_length",
+    "numeric__loan_amnt",
+    "numeric__loan_int_rate",
+    "numeric__loan_percent_income",
+    "numeric__cb_person_cred_hist_length",
+    "category__person_home_ownership_MORTGAGE",
+    "category__person_home_ownership_OTHER",
+    "category__person_home_ownership_OWN",
+    "category__person_home_ownership_RENT",
+    "category__loan_intent_DEBTCONSOLIDATION",
+    "category__loan_intent_EDUCATION",
+    "category__loan_intent_HOMEIMPROVEMENT",
+    "category__loan_intent_MEDICAL",
+    "category__loan_intent_PERSONAL",
+    "category__loan_intent_VENTURE",
+    "category__loan_grade_A",
+    "category__loan_grade_B",
+    "category__loan_grade_C",
+    "category__loan_grade_D",
+    "category__loan_grade_E",
+    "category__loan_grade_F",
+    "category__loan_grade_G",
+    "category__cb_person_default_on_file_N",
+    "category__cb_person_default_on_file_Y"
+  ],
+  "pca_explained_variance": [
+    0.21863676941586183,
+    0.1810167877310018
+  ],
+  "selected_parameters": {
+    "KMeans": {
+      "n_clusters": 2
+    },
+    "DBSCAN": {
+      "eps": 3.0,
+      "min_samples": 3
+    },
+    "Hierarchical": {
+      "n_clusters": 3,
+      "linkage": "average"
+    }
+  }
+}

@@ -17,7 +17,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier, plot_tree
 
-from preprocessing import ROOT, FEATURES, TARGET, plt, save_figure, sns
+from preprocessing import ROOT, DATA, FEATURES, TARGET, plt, save_figure, sns
 
 
 def make_pipeline(model, categories):
@@ -32,7 +32,7 @@ def main():
     sns.set_theme(style="whitegrid")
     output = ROOT / "reports/lab1"
     output.mkdir(parents=True, exist_ok=True)
-    data = pd.read_csv(ROOT / "data/raw/credit_risk_dataset.csv").dropna().drop_duplicates()
+    data = pd.read_csv(DATA / "raw/credit_risk_dataset.csv").dropna().drop_duplicates()
     x, y = data.drop(columns=TARGET), data[TARGET]
     categories = [column for column in x.columns if column not in FEATURES]
     x_train, x_test, y_train, y_test = train_test_split(
