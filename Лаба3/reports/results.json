@@ -1,0 +1,59 @@
+{
+  "LinearRegression": {
+    "best_parameters": {},
+    "intercept": 7.30178376319885,
+    "iterations": null
+  },
+  "LASSO": {
+    "best_parameters": {
+      "model__alpha": 0.0001
+    },
+    "intercept": 7.304721987014661,
+    "iterations": 18
+  },
+  "Ridge": {
+    "best_parameters": {
+      "model__alpha": 0.1
+    },
+    "intercept": 7.302436724561612,
+    "iterations": null
+  },
+  "experiment": {
+    "target": "loan_int_rate",
+    "excluded": [
+      "loan_status"
+    ],
+    "original_rows": 32581,
+    "removed_missing": 3943,
+    "removed_duplicates": 137,
+    "clean_rows": 28501,
+    "train_rows": 22800,
+    "test_rows": 5701,
+    "random_state": 42,
+    "selected_by_cv_rmse": "LASSO",
+    "baseline": {
+      "MAE": 2.689963821905667,
+      "RMSE": 3.2214902836202244,
+      "R2": -0.0003818390049465936
+    },
+    "numeric_mean": {
+      "person_age": 27.76359649122807,
+      "person_income": 66504.7875877193,
+      "person_emp_length": 4.7882456140350875,
+      "loan_amnt": 9682.538377192983,
+      "loan_percent_income": 0.16984561403508772,
+      "cb_person_cred_hist_length": 5.805570175438596
+    },
+    "numeric_scale": {
+      "person_age": 6.338872641369004,
+      "person_income": 52423.07351580023,
+      "person_emp_length": 4.1973762158720636,
+      "loan_amnt": 6347.905217977182,
+      "loan_percent_income": 0.1066082467271505,
+      "cb_person_cred_hist_length": 4.049209867627628
+    },
+    "python": "3.12.14",
+    "sklearn": "1.9.1",
+    "lasso_zero_coefficients": 0
+  }
+}
