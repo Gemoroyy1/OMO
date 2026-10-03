@@ -1,0 +1,39 @@
+{
+  "original_rows": 32581,
+  "missing_by_column": {
+    "person_age": 0,
+    "person_income": 0,
+    "person_home_ownership": 0,
+    "person_emp_length": 895,
+    "loan_intent": 0,
+    "loan_grade": 0,
+    "loan_amnt": 0,
+    "loan_int_rate": 3116,
+    "loan_status": 0,
+    "loan_percent_income": 0,
+    "cb_person_default_on_file": 0,
+    "cb_person_cred_hist_length": 0
+  },
+  "removed_missing_rows": 3943,
+  "removed_duplicate_rows": 137,
+  "clean_rows": 28501,
+  "normalization_min": {
+    "person_age": 20.0,
+    "person_income": 4000.0,
+    "person_emp_length": 0.0,
+    "loan_amnt": 500.0,
+    "loan_int_rate": 5.42,
+    "loan_percent_income": 0.0,
+    "cb_person_cred_hist_length": 2.0
+  },
+  "normalization_max": {
+    "person_age": 144.0,
+    "person_income": 6000000.0,
+    "person_emp_length": 123.0,
+    "loan_amnt": 35000.0,
+    "loan_int_rate": 23.22,
+    "loan_percent_income": 0.83,
+    "cb_person_cred_hist_length": 30.0
+  },
+  "employment_exceeds_age_rows": 2
+}
