@@ -12,5 +12,5 @@
 Просмотр всех результатов и графиков:
 
 ```powershell
-.\.venv\Scripts\python Лаба1/Посмотреть_результаты.py
+.\.venv\Scripts\python Лаба1/view_results.py
 ```
