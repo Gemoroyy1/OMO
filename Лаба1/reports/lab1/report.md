@@ -88,8 +88,8 @@ ROC-кривая показывает долю найденных дефолто
 
 ## Воспроизводимость
 
-Запуск из корня проекта: `.\.venv\Scripts\python classification.py`.
+Запуск из корня проекта: `.\.venv\Scripts\python Лаба1/classification.py`.
 Python 3.12.14, scikit-learn 1.9.1. Точные версии зависимостей сохранены
-в requirements-lock.txt; установка: `python -m pip install -r requirements-lock.txt`.
+в Лаба1/requirements-lock.txt; установка: `python -m pip install -r Лаба1/requirements-lock.txt`.
 Скрипт сохраняет метрики, все результаты подбора, индивидуальные предсказания
-с индексами исходных строк и графики в reports/lab1/.
+с индексами исходных строк и графики в Лаба1/reports/lab1/.

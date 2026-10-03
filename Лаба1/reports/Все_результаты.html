@@ -1,0 +1,99 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><title>Лабораторная №1</title><style>body{font:17px Arial;max-width:1200px;margin:40px auto;padding:0 20px;color:#172334}img{width:100%;height:auto}table{border-collapse:collapse}td,th{padding:12px;border:1px solid #ccc}details{margin:16px 0}pre{overflow:auto;background:#f4f6f8;padding:16px}</style><h1>Лабораторная №1. Классификация</h1><p>Исходных строк: 32581; удалено с пропусками: 3943; дубликатов: 137; осталось: 28501.</p><p>Обучение: 22800 строк; тест: 5701. Подбор параметров: 3 фолда CV, критерий F1 класса «дефолт».</p><h2>Метрики</h2><p>Precision, recall и F1 относятся к классу 1 — дефолту.</p><table><tr><th>model</th><th>cv_f1</th><th>precision</th><th>recall</th><th>f1</th><th>roc_auc</th></tr><tr><td>KNN</td><td>0.7099</td><td>0.8815</td><td>0.5889</td><td>0.7061</td><td>0.8771</td></tr><tr><td>SVM</td><td>0.7791</td><td>0.9120</td><td>0.6616</td><td>0.7669</td><td>0.9010</td></tr><tr><td>DecisionTree</td><td>0.8030</td><td>0.9759</td><td>0.6858</td><td>0.8055</td><td>0.9092</td></tr></table><p>Выбрана по CV F1: DecisionTree.</p><p>Дерево нашло 849 из 1238 дефолтов и пропустило 389. Выбросы пока сохранены.</p><details><summary>KNN: параметры и метрики обоих классов</summary><pre>{
+  &quot;best_parameters&quot;: {
+    &quot;model__n_neighbors&quot;: 15,
+    &quot;model__weights&quot;: &quot;distance&quot;
+  },
+  &quot;classification_report&quot;: {
+    &quot;0&quot;: {
+      &quot;precision&quot;: 0.8955683217070168,
+      &quot;recall&quot;: 0.9780416760026888,
+      &quot;f1-score&quot;: 0.9349898254257256,
+      &quot;support&quot;: 4463.0
+    },
+    &quot;1&quot;: {
+      &quot;precision&quot;: 0.8814993954050786,
+      &quot;recall&quot;: 0.5888529886914378,
+      &quot;f1-score&quot;: 0.7060532687651332,
+      &quot;support&quot;: 1238.0
+    },
+    &quot;accuracy&quot;: 0.8935274513243291,
+    &quot;macro avg&quot;: {
+      &quot;precision&quot;: 0.8885338585560477,
+      &quot;recall&quot;: 0.7834473323470632,
+      &quot;f1-score&quot;: 0.8205215470954295,
+      &quot;support&quot;: 5701.0
+    },
+    &quot;weighted avg&quot;: {
+      &quot;precision&quot;: 0.8925131856323283,
+      &quot;recall&quot;: 0.8935274513243291,
+      &quot;f1-score&quot;: 0.8852751337671019,
+      &quot;support&quot;: 5701.0
+    }
+  }
+}</pre></details><details><summary>SVM: параметры и метрики обоих классов</summary><pre>{
+  &quot;best_parameters&quot;: {
+    &quot;model__C&quot;: 10,
+    &quot;model__gamma&quot;: &quot;scale&quot;,
+    &quot;model__kernel&quot;: &quot;rbf&quot;
+  },
+  &quot;classification_report&quot;: {
+    &quot;0&quot;: {
+      &quot;precision&quot;: 0.9127628565479908,
+      &quot;recall&quot;: 0.9822989020838001,
+      &quot;f1-score&quot;: 0.9462551262680768,
+      &quot;support&quot;: 4463.0
+    },
+    &quot;1&quot;: {
+      &quot;precision&quot;: 0.9120267260579065,
+      &quot;recall&quot;: 0.6615508885298869,
+      &quot;f1-score&quot;: 0.7668539325842697,
+      &quot;support&quot;: 1238.0
+    },
+    &quot;accuracy&quot;: 0.9126469040519207,
+    &quot;macro avg&quot;: {
+      &quot;precision&quot;: 0.9123947913029486,
+      &quot;recall&quot;: 0.8219248953068434,
+      &quot;f1-score&quot;: 0.8565545294261733,
+      &quot;support&quot;: 5701.0
+    },
+    &quot;weighted avg&quot;: {
+      &quot;precision&quot;: 0.9126030022159921,
+      &quot;recall&quot;: 0.9126469040519207,
+      &quot;f1-score&quot;: 0.9072972806654539,
+      &quot;support&quot;: 5701.0
+    }
+  }
+}</pre></details><details><summary>DecisionTree: параметры и метрики обоих классов</summary><pre>{
+  &quot;best_parameters&quot;: {
+    &quot;model__class_weight&quot;: null,
+    &quot;model__max_depth&quot;: 8,
+    &quot;model__min_samples_leaf&quot;: 5
+  },
+  &quot;classification_report&quot;: {
+    &quot;0&quot;: {
+      &quot;precision&quot;: 0.9194783688677293,
+      &quot;recall&quot;: 0.995294644857719,
+      &quot;f1-score&quot;: 0.9558855175381967,
+      &quot;support&quot;: 4463.0
+    },
+    &quot;1&quot;: {
+      &quot;precision&quot;: 0.9758620689655172,
+      &quot;recall&quot;: 0.68578352180937,
+      &quot;f1-score&quot;: 0.8055028462998103,
+      &quot;support&quot;: 1238.0
+    },
+    &quot;accuracy&quot;: 0.9280827924925452,
+    &quot;macro avg&quot;: {
+      &quot;precision&quot;: 0.9476702189166233,
+      &quot;recall&quot;: 0.8405390833335444,
+      &quot;f1-score&quot;: 0.8806941819190035,
+      &quot;support&quot;: 5701.0
+    },
+    &quot;weighted avg&quot;: {
+      &quot;precision&quot;: 0.9317223647844213,
+      &quot;recall&quot;: 0.9280827924925452,
+      &quot;f1-score&quot;: 0.9232291858432095,
+      &quot;support&quot;: 5701.0
+    }
+  }
+}</pre></details><h2>Матрицы ошибок</h2><a href="lab1/confusion_matrices.png"><img src="lab1/confusion_matrices.png" alt="Матрицы ошибок"></a><h2>ROC-кривые</h2><a href="lab1/roc_curves.png"><img src="lab1/roc_curves.png" alt="ROC-кривые"></a><h2>Дерево решений: первые четыре уровня</h2><a href="lab1/decision_tree.png"><img src="lab1/decision_tree.png" alt="Дерево решений: первые четыре уровня"></a><h2>Матрица корреляций</h2><a href="figures/correlation_matrix.png"><img src="figures/correlation_matrix.png" alt="Матрица корреляций"></a><h2>Гистограммы до очистки</h2><a href="figures/raw/histograms.png"><img src="figures/raw/histograms.png" alt="Гистограммы до очистки"></a><h2>Ящики с усами до очистки</h2><a href="figures/raw/boxplots.png"><img src="figures/raw/boxplots.png" alt="Ящики с усами до очистки"></a><h2>Диаграммы рассеяния до очистки</h2><a href="figures/raw/scatterplots.png"><img src="figures/raw/scatterplots.png" alt="Диаграммы рассеяния до очистки"></a><h2>Гистограммы после очистки</h2><a href="figures/clean/histograms.png"><img src="figures/clean/histograms.png" alt="Гистограммы после очистки"></a><h2>Ящики с усами после очистки</h2><a href="figures/clean/boxplots.png"><img src="figures/clean/boxplots.png" alt="Ящики с усами после очистки"></a><h2>Диаграммы рассеяния после очистки</h2><a href="figures/clean/scatterplots.png"><img src="figures/clean/scatterplots.png" alt="Диаграммы рассеяния после очистки"></a><p><a href="lab1/report.md">Подробный отчёт</a> · <a href="lab1/predictions.csv">Предсказания CSV</a></p></html>
