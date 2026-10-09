@@ -17,6 +17,14 @@
 
 ## Оформленные отчёты
 
+Редактируемые версии Word:
+
+- [Лабораторная №1 — DOCX](Лаба1/reports/report_gost.docx).
+- [Лабораторная №2 — DOCX](Лаба2/reports/report_gost.docx).
+- [Лабораторная №3 — DOCX](Лаба3/reports/report_gost.docx).
+
+После открытия Word обновите содержание: `Ctrl+A`, затем `F9`.
+
 - [Лабораторная №1 — классификация, PDF](Лаба1/reports/report_gost.pdf).
 - [Лабораторная №2 — кластеризация, PDF](Лаба2/reports/report_gost.pdf).
 - [Лабораторная №3 — регрессия, PDF](Лаба3/reports/report_gost.pdf).
